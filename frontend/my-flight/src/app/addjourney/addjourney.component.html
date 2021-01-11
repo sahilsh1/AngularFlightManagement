@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#"><img src="../../assets/icon_plane.png" style="width:35px;"></a>
+     </div>
+    <ul class="nav navbar-nav" >
+        <li class="nav-item "*ngFor="let link of links">
+            <a class="nav-link" [routerLink]="link.path">{{link.title}}</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav nav-item navbar-right  ml-auto">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+</nav>
+<div class="registration">
+  <div class="row">
+      <div *ngIf=success class="col-6"><h1><i>"Happy Journey"</i></h1></div>
+  <div class="login-box col-6">
+    <h2>AddNewJourney</h2>
+    <form name="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" 
+            class="form-control" 
+            name="name" 
+            [(ngModel)]="flight.name"
+            ngModel
+            required/>
+        </div>
+        <div class="form-group">
+            <label for="flying_from">Flying_from</label>
+            <input type="text" 
+            class="form-control" 
+            name="flying_from" 
+            [(ngModel)]="flight.flying_from"
+            ngModel
+            required/>
+        </div>
+        <div class="form-group">
+            <label for="flying_to">Flying_to</label>
+            <input type="text" 
+            class="form-control" 
+            name="flying_to" 
+            [(ngModel)]="flight.flying_to"
+            ngModel
+            required/>
+        </div>
+        <div class="form-group">
+            <label for="name">Departure Date</label>
+            <input type="date"
+            class="form-control" 
+            name="departure_date" 
+            [(ngModel)]="flight.departure_date"
+            ngModel
+            required/>
+        </div>
+        <div class="form-group">
+            <label for="name">End date</label>
+            <input type="date" 
+            class="form-control" 
+            name="end_date" 
+            [(ngModel)]="flight.end_date"
+            ngModel
+            required/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">Add</button>
+            <a class="btn btn-link" routerLink="/home">Cancel</a>
+        </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+

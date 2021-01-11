@@ -1,0 +1,10 @@
+thead{
+
+  background: rgba(83, 45, 172, 0.5);
+  color: rgb(196, 40, 40);
+  border-radius: 50%;
+}
+tbody{
+  background: rgba(14, 106, 192, 0.5);
+  color: rgb(245, 240, 240);
+}

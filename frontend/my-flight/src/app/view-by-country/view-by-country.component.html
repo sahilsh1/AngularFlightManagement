@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#"><img src="../../assets/icon_plane.png" style="width:35px;"></a>
+     </div>
+    <ul class="nav navbar-nav " >
+        <li class="nav-item "*ngFor="let link of links">
+            <a class="nav-link" [routerLink]="link.path">{{link.title}}</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav nav-item navbar-right  ml-auto">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+</nav>
+<br>
+<br>
+<div *ngIf=!success class="col-md-6 col-md-offset-3">
+    <h2 *ngIf=!success>Enter the Country Name</h2>
+    <form *ngIf=!success name="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="flying_to">Country Name</label>
+            <input type="text" 
+            class="form-control" 
+            name="flying_to" 
+            [(ngModel)]="flying_to"
+            ngModel
+            required/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success">Click</button>
+            <a class="btn btn-link" routerLink="/flight-list2">Cancel</a>
+        </div>
+    </form>
+</div>
+<div *ngIf=success class="container">
+    <h2>Travel List</h2>
+    <br>
+   <table class="table table-hover">
+    <thead  class="text-center">
+      <tr class="text-dark">
+        <th>Id</th>
+        <th>name</th> 
+        <th>total days</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+        <tr *ngFor="let flight of flight3; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{flight.name}}</td>
+            <td>{{flight.days}}</td>
+        </tr>
+    </tbody>
+   </table>
+  </div>
+
+

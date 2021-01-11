@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img src="../../assets/icon_plane.png" style="width:35px;"></a>
+   </div>
+  <ul class="nav navbar-nav " >
+      <li class="nav-item "*ngFor="let link of links">
+          <a class="nav-link" [routerLink]="link.path">{{link.title}}</a>
+      </li>
+  </ul>
+  <ul class="nav navbar-nav nav-item navbar-right  ml-auto">
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+  </ul>
+</nav>
+<br>
+<br>
+<div class="container">
+  <h2>Travel List</h2>
+  <br>
+ <table class="table table-hover">
+  <thead  class="text-center">
+    <tr class="text-dark">
+      <th>Id</th>
+      <th>name</th> 
+      <th>flying_to</th>
+      <th>flying_from</th>
+       <th>departure_date</th>
+       <th>end_date</th>
+       <th class="text-right">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="text-center">
+      <tr *ngFor="let flight of flight3; let i=index">
+          <td>{{i+1}}</td>
+          <td>{{flight.name}}</td>
+          <td>{{flight.flying_from}}</td>
+          <td>{{flight.flying_to}}</td>
+          <td *ngIf="flight.departure_date!=null">{{flight.departure_date.valueOf()|date}}</td>
+          <td *ngIf="flight.end_date!=null">{{flight.end_date.valueOf()|date}}</td>
+          <td class="text-center"> 
+            <div class="btn btn-primary" [routerLink]="['flightupdate',flight.id]">update</div>
+          </td>
+      </tr>
+  </tbody>
+ </table>
+</div>
+ 

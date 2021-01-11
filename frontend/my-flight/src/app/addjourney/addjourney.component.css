@@ -1,0 +1,32 @@
+.registration{
+  background-image: url('../../assets/bgplane.jpg');
+  background-size: 100% 100%; 
+  background-attachment: fixed;
+  width:100%;
+  height:900px;
+  }
+  .login-box{
+    width: 600px;
+    height: 650px;
+    background: rgba(8, 8, 8, 0.5);
+    color: rgb(252, 247, 247);
+    top: 54%;
+    left: 24%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 90px 30px;
+  }
+  h1 {
+    left: 90%;
+    line-height: 200px;
+    margin-top: 300px;
+    position: absolute;
+    text-align: center;
+    top: 60%;
+    font-family:  'Hoefler Text', Georgia, 'Times New Roman', serif;
+    color: hsl(327, 71%, 42%);
+    /* background: rgba(31, 121, 173, 0.5); */
+    font-size: 400%;
+    width: 100%;
+}
